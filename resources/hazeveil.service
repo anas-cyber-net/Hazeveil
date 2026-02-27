@@ -1,0 +1,12 @@
+[Unit]
+Description=HazeVeil Behavioral Variation Simulator
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/hazeveil start --level 3
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
