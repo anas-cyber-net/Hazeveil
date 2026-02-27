@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+title: HazeVeil
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - given-names: anas-cyber-net
+    alias: anas-cyber-net
+repository-code: "https://github.com/anas-cyber-net/Hazeveil"
+url: "https://github.com/anas-cyber-net/Hazeveil"
+abstract: >
+  HazeVeil is a behavioral biometrics obfuscation tool that protects
+  users from fingerprinting through AI-powered pattern blending across
+  mouse, keyboard, touchpad, scroll, audio, and clipboard channels.
+keywords:
+  - privacy
+  - anti-fingerprinting
+  - behavioral-biometrics
+  - rust
+  - linux
+  - security
+license: GPL-3.0
+version: 1.0.0
+date-released: "2026-02-28"
