@@ -1,11 +1,11 @@
 [package]
 name = "hazeveil"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
 authors = ["Anas Malik Jaafar <anas.jaafar.cyber.net.t@proton.me>"]
 description = "Linux Behavioral Variation Simulator for Privacy Research"
 license = "GPL-3.0-or-later"
-repository = "https://github.com/anas-cyber-net/hazeveil"
+repository = "https://github.com/anas-cyber-net/Hazeveil"
 keywords = ["privacy", "security", "behavioral", "biometrics", "linux"]
 categories = ["command-line-utilities"]
 
