@@ -8,6 +8,7 @@ license = "GPL-3.0-or-later"
 repository = "https://github.com/anas-cyber-net/Hazeveil"
 keywords = ["privacy", "security", "behavioral", "biometrics", "linux"]
 categories = ["command-line-utilities"]
+exclude = ["target/*", "proofs/*", "*.ots", ".git/*"]
 
 [lib]
 name = "hazeveil"
