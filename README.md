@@ -21,7 +21,8 @@ field of behavioral biometrics.
 ![Platform](https://img.shields.io/badge/platform-Linux-lightgrey)
 ![Rust](https://img.shields.io/badge/built%20with-Rust-orange)
 ![Tests](https://img.shields.io/badge/tests-28%2F28%20passing-brightgreen)
-![Version](https://img.shields.io/badge/version-0.1.0-informational)
+![Version](https://img.shields.io/badge/version-1.0.0-informational)
+[![crates.io](https://img.shields.io/crates/v/hazeveil.svg)](https://crates.io/crates/hazeveil)
 
 ---
 
@@ -153,6 +154,14 @@ with randomized weights.
 ---
 
 ## Installation
+
+### Via Cargo (Recommended)
+```bash
+cargo install hazeveil
+```
+After installation, open a new terminal window.
+
+### From Source
 ```bash
 git clone https://github.com/anas-cyber-net/hazeveil.git && cd hazeveil && chmod +x install.sh && ./install.sh
 ```
