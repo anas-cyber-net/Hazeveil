@@ -155,26 +155,68 @@ with randomized weights.
 
 ## Installation
 
-### Via Cargo (Recommended)
-```bash
-cargo install hazeveil
-```
-After installation, open a new terminal window.
+<div style="background:#0d1117; padding:1.5rem; border-radius:8px; border:1px solid #30363d; margin:1rem 0;">
+  <h3 style="margin-top:0; color:#58a6ff;">Via Cargo (Recommended)</h3>
+  <p>The simplest and cleanest way — builds and installs directly from crates.io.</p>
 
-### From Source
-```bash
-git clone https://github.com/anas-cyber-net/hazeveil.git && cd hazeveil && chmod +x install.sh && ./install.sh
-```
+  <ol>
+    <li><strong>Install Rust</strong> (if not already installed):
+      <pre style="background:#161b22; padding:1rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+source "$HOME/.cargo/env"</code></pre>
+    </li>
 
-The installer handles everything automatically:
-- Installs Rust if not present
-- Installs required system libraries for your distribution
-- Builds HazeVeil in release mode with full optimizations
-- Installs the binary to `/usr/local/bin/`
-- Configures your shell PATH
+    <li><strong>Install system dependencies</strong> according to your distribution:
+      <ul>
+        <li><strong>Ubuntu / Debian / Kali / Linux Mint / Pop!_OS</strong>
+          <pre style="background:#161b22; padding:1rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>sudo apt update
+sudo apt install -y build-essential pkg-config libevdev-dev libssl-dev</code></pre>
+        </li>
+        <li><strong>Arch Linux / Manjaro / EndeavourOS / Garuda / CachyOS</strong>
+          <pre style="background:#161b22; padding:1rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>sudo pacman -Syu --needed base-devel pkg-config libevdev openssl</code></pre>
+        </li>
+        <li><strong>Fedora / Nobara</strong>
+          <pre style="background:#161b22; padding:1rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>sudo dnf install -y gcc pkgconf-pkg-config libevdev-devel openssl-devel</code></pre>
+        </li>
+        <li><strong>openSUSE Leap / Tumbleweed</strong>
+          <pre style="background:#161b22; padding:1rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>sudo zypper install -y gcc pkg-config libevdev-devel openssl-devel</code></pre>
+        </li>
+      </ul>
+    </li>
 
-After installation, open a new terminal window.
+    <li><strong>Install HazeVeil</strong>:
+      <pre style="background:#161b22; padding:1rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>cargo install hazeveil</code></pre>
+    </li>
+  </ol>
 
+  <p><strong>After installation</strong>, open a new terminal (or run <code>source "$HOME/.cargo/env"</code>) and type:</p>
+  <pre style="background:#161b22; padding:1rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>hazeveil</code></pre>
+
+  <p>To update later: just run <code>cargo install hazeveil --force</code>.</p>
+</div>
+
+<div style="background:#0d1117; padding:1.5rem; border-radius:8px; border:1px solid #30363d; margin:2rem 0;">
+  <h3 style="margin-top:0; color:#58a6ff;">One-Command Installer (From Source – Fully Automatic)</h3>
+  <pre style="background:#161b22; padding:1rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>git clone https://github.com/anas-cyber-net/hazeveil.git && cd hazeveil && chmod +x install.sh && ./install.sh</code></pre>
+
+  <p>The installer handles everything automatically:</p>
+  <ul>
+    <li>Installs Rust if not present</li>
+    <li>Installs required system libraries for your distribution</li>
+    <li>Builds HazeVeil in release mode with full optimizations</li>
+    <li>Installs the binary to <code>/usr/local/bin/</code></li>
+    <li>Configures your shell PATH</li>
+  </ul>
+
+  <p>After installation, open a new terminal window and run:</p>
+  <pre style="background:#161b22; padding:1rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>hazeveil</code></pre>
+</div>
+
+<div style="background:#0d1117; padding:1.5rem; border-radius:8px; border:1px solid #30363d; margin:2rem 0;">
+  <h3 style="margin-top:0; color:#58a6ff;">PATH Fix (if needed)</h3>
+  <p>If <code>hazeveil</code> command is not found after installation:</p>
+  <pre style="background:#161b22; padding:1rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc   # or ~/.zshrc if using zsh
+source ~/.bashrc</code></pre>
+</div>
 ---
 
 ## Usage
