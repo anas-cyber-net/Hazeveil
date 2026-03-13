@@ -192,12 +192,47 @@ sudo apt install -y build-essential pkg-config libevdev-dev libssl-dev</code></p
   <pre style="background:#161b22; padding:1rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>hazeveil</code></pre>
 
   <p>To update later: just run <code>cargo install hazeveil --force</code>.</p>
+
+  <div style="background:#1f2a3a; padding:1rem; border-radius:6px; margin-top:1.5rem; border-left:4px solid #58a6ff;">
+    <h4 style="margin-top:0; color:#58a6ff;">Special Instructions for Tails OS</h4>
+    <p>This method (Via Cargo) is the best and most reliable way to install HazeVeil on Tails OS smoothly and easily — even if Persistent Storage is enabled only for personal files.</p>
+    <p>Proven working steps on Tails:</p>
+    <ol>
+      <li><strong>Temporarily add Debian repositories</strong> (required for build tools):
+        <pre style="background:#0d1117; padding:0.8rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>sudo nano /etc/apt/sources.list.d/debian-ext.list</code></pre>
+        <p style="margin:0.5rem 0;">Paste the following lines inside the file, then save (Ctrl+O → Enter → Ctrl+X):</p>
+        <pre style="background:#0d1117; padding:0.8rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>deb tor+http://deb.debian.org/debian trixie main contrib non-free non-free-firmware
+deb tor+http://deb.debian.org/debian-security trixie-security main contrib non-free non-free-firmware
+deb tor+http://deb.debian.org/debian trixie-updates main contrib non-free non-free-firmware</code></pre>
+      </li>
+      <li><strong>Update apt</strong>:
+        <pre style="background:#0d1117; padding:0.8rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>sudo apt update</code></pre>
+      </li>
+      <li><strong>Install required build tools and libraries</strong>:
+        <pre style="background:#0d1117; padding:0.8rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>sudo apt install -y build-essential gcc pkg-config libevdev-dev libssl-dev</code></pre>
+      </li>
+      <li><strong>(Optional – if network is slow)</strong> Force Tor proxy:
+        <pre style="background:#0d1117; padding:0.8rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>export https_proxy=socks5h://127.0.0.1:9050
+export http_proxy=socks5h://127.0.0.1:9050</code></pre>
+      </li>
+      <li><strong>Install Rust</strong>:
+        <pre style="background:#0d1117; padding:0.8rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+source "$HOME/.cargo/env"</code></pre>
+      </li>
+      <li><strong>Install HazeVeil</strong>:
+        <pre style="background:#0d1117; padding:0.8rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>cargo install hazeveil</code></pre>
+      </li>
+      <li><strong>Run the tool</strong>:
+        <pre style="background:#0d1117; padding:0.8rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>hazeveil --help</code></pre>
+      </li>
+    </ol>
+    <p><strong>Security Note</strong>: The added repositories are temporary and will be removed after reboot or manually with <code>sudo rm /etc/apt/sources.list.d/debian-ext.list && sudo apt update</code>. Everything remains in RAM except files saved in Persistent.</p>
+  </div>
 </div>
 
 <div style="background:#0d1117; padding:1.5rem; border-radius:8px; border:1px solid #30363d; margin:2rem 0;">
   <h3 style="margin-top:0; color:#58a6ff;">One-Command Installer (From Source – Fully Automatic)</h3>
   <pre style="background:#161b22; padding:1rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>git clone https://github.com/anas-cyber-net/hazeveil.git && cd hazeveil && chmod +x install.sh && ./install.sh</code></pre>
-
   <p>The installer handles everything automatically:</p>
   <ul>
     <li>Installs Rust if not present</li>
@@ -206,16 +241,8 @@ sudo apt install -y build-essential pkg-config libevdev-dev libssl-dev</code></p
     <li>Installs the binary to <code>/usr/local/bin/</code></li>
     <li>Configures your shell PATH</li>
   </ul>
-
   <p>After installation, open a new terminal window and run:</p>
   <pre style="background:#161b22; padding:1rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>hazeveil</code></pre>
-</div>
-
-<div style="background:#0d1117; padding:1.5rem; border-radius:8px; border:1px solid #30363d; margin:2rem 0;">
-  <h3 style="margin-top:0; color:#58a6ff;">PATH Fix (if needed)</h3>
-  <p>If <code>hazeveil</code> command is not found after installation:</p>
-  <pre style="background:#161b22; padding:1rem; border-radius:6px; overflow-x:auto; direction:ltr;"><code>echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc   # or ~/.zshrc if using zsh
-source ~/.bashrc</code></pre>
 </div>
 ---
 
