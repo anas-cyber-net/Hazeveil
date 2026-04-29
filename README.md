@@ -104,6 +104,24 @@ the behavioral layer.
 
 ---
 
+## Benchmark Results
+
+Independent testing against a Random Forest classifier trained on keystroke dynamics:
+
+| Condition | Recognition Rate |
+|-----------|-----------------|
+| Without HazeVeil | 100.0% |
+| With HazeVeil (Level 3) | 0.0% |
+| **Drop** | **100.0%** |
+
+**Test environment:** Omarchy (Arch Linux), Kernel 6.19.13  
+**Methodology:** 10 baseline sessions + 10 HazeVeil sessions  
+**Full methodology and code:** [`/research`](research/)
+
+![Benchmark Results](research/benchmark_results.png)
+
+---
+
 ## Pattern Library
 
 The embedded library contains 15 archetype profiles:
