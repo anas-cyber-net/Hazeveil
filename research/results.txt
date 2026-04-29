@@ -1,0 +1,10 @@
+Date: 2026-04-27
+System: Omarchy (Arch Linux), Kernel 6.19.13
+Classifier: Random Forest (100 trees)
+Sessions: 10 baseline + 10 with HazeVeil
+HazeVeil level: 3 (Moderate)
+
+Results:
+- Recognition without HazeVeil: 100.0%
+- Recognition with HazeVeil:    0.0%
+- Drop: 100.0%
